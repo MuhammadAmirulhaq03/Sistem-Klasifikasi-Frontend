@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* RESET FULLSCREEN */
+html, body, #root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0e1a; /* background utama dashboard */
+}
