@@ -1,16 +1,87 @@
-# React + Vite
+# Sistem Klasifikasi Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend dashboard untuk Sistem Klasifikasi Brondolan Sawit yang dibangun menggunakan **React 19**, **Vite**, dan **Tailwind CSS**. Aplikasi ini telah dikonfigurasi menggunakan **Docker** dan **Nginx** untuk kemudahan deployment dan isolasi environment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Prasyarat (Prerequisites)
 
-## React Compiler
+Sebelum memulai, pastikan komputer Anda telah terpasang:
+- [Git](https://git-scm.com/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) *(Pastikan Docker Desktop aktif/running)*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Jika ingin menjalankan tanpa Docker:
+- [Node.js](https://nodejs.org/) (versi 20 atau lebih baru)
+- npm (bawaan dari Node.js)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Setup & Menjalankan Menggunakan Docker
+
+### 1. Clone Repository
+Buka terminal dan jalankan perintah berikut:
+
+```bash
+git clone https://github.com/MuhammadAmirulhaq03/Sistem-Klasifikasi-Frontend.git
+```
+
+Masuk ke folder proyek:
+```bash
+cd Sistem-Klasifikasi-Frontend
+```
+
+### 2. Jalankan Container
+
+#### Opsi A: Menggunakan Docker Compose (Direkomendasikan ⭐)
+Cukup jalankan satu perintah berikut:
+
+```bash
+docker compose up -d --build
+```
+
+> **Catatan:**
+> - `--build` akan mem-build ulang image dengan kode terbaru.
+> - `-d` (*detached mode*) akan menjalankan container di latar belakang.
+
+#### Opsi B: Menggunakan Docker CLI Manual
+```bash
+# 1. Build Docker image
+docker build -t sistem-klasifikasi-frontend .
+
+# 2. Jalankan container
+docker run -d -p 3000:80 --name sistem-klasifikasi-frontend sistem-klasifikasi-frontend
+```
+
+### 3. Akses Aplikasi
+Buka browser favorit Anda dan kunjungi:
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 🛠️ Perintah Manajemen Docker
+
+| Perintah | Deskripsi |
+| :--- | :--- |
+| `docker compose ps` | Melihat status container |
+| `docker compose logs -f` | Memantau log aplikasi secara real-time |
+| `docker compose restart` | Memulai ulang container |
+| `docker compose down` | Menghentikan dan menghapus container |
+
+---
+
+## 💻 Menjalankan Secara Lokal Tanpa Docker (Mode Development)
+
+Jika Anda ingin melakukan pengembangan (*coding*) langsung dengan fitur Hot Module Replacement (HMR):
+
+1. **Install dependensi:**
+   ```bash
+   npm install
+   ```
+
+2. **Jalankan development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Buka di browser:**
+   👉 **[http://localhost:5173](http://localhost:5173)**
