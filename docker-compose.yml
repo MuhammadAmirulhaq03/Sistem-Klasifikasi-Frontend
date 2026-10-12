@@ -1,0 +1,9 @@
+services:
+  sistem-klasifikasi-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sistem-klasifikasi-frontend
+    ports:
+      - "3000:80"
+    restart: always
