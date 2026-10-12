@@ -269,10 +269,10 @@ function StreamPanel({ stream }) {
   return (
     <div
       style={{
-        flex: "1 1 auto",
         width: "100%",
-        minWidth: 0,
-        minHeight: "300px",
+        maxWidth: "100%",
+        maxHeight: "100%",
+        aspectRatio: "4 / 3",
         background: "#dce8d8",
         border: `1px solid ${C.cardBorder}`,
         borderRadius: "12px",
@@ -281,6 +281,7 @@ function StreamPanel({ stream }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        margin: "auto",
       }}
     >
       {/* Grid overlay */}
